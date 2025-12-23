@@ -361,9 +361,9 @@ const RandomBid = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.5, opacity: 0 }}
                 className="fixed z-[101] bg-gray-900 rounded-xl p-8 shadow-2xl
-                  border border-gray-700 w-[90%] max-w-2xl left-[5%] md:left-[30%]"
+                  border border-gray-700 w-[90%] max-w-2xl left-[5%] md:left-[30%] top-[10%] md:top-[5%]"
                 style={{
-                  top: "30%",
+                  top: "10%",
                   // left: "40%",
                   transform: "translate(-50%, -50%)",
                 }}

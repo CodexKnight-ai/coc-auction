@@ -49,10 +49,10 @@ export const WebSocketProvider = ({ children }) => {
 
     socket.on('playerUpdated', (updatedPlayer) => {
       setPlayers(prev => {
-        const newPlayers = prev.map(player => 
+        const newPlayers = prev.map(player =>
           player.id === updatedPlayer.id ? updatedPlayer : player
         );
-        
+
         // Only show toast if on admin page
         if (isAdminPage) {
           if (updatedPlayer.operation === 'update') {
@@ -65,7 +65,7 @@ export const WebSocketProvider = ({ children }) => {
             });
           }
         }
-        
+
         return newPlayers;
       });
     });
@@ -77,8 +77,8 @@ export const WebSocketProvider = ({ children }) => {
 
   const fetchPlayers = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-      const response = await fetch(`${apiUrl}/players`);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/players`);
       const data = await response.json();
       setPlayers(data);
     } catch (error) {

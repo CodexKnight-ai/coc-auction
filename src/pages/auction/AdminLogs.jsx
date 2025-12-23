@@ -14,7 +14,7 @@ const AdminLogs = () => {
 
   const fetchLogs = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/logs`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/logs`);
       if (!response.ok) {
         throw new Error('Failed to fetch logs');
       }
@@ -63,11 +63,11 @@ const AdminLogs = () => {
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
             Transaction Logs ({logs.length})
           </h2>
-          
+
           <div className="space-y-4">
             {logs.map((log) => {
               const teamInfo = teamData[log.soldTo.toLowerCase()];
-              
+
               return (
                 <div
                   key={log._id}
@@ -77,7 +77,7 @@ const AdminLogs = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <div className="group relative inline-block">
-                        <a 
+                        <a
                           href={log.codolioLink}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -85,9 +85,9 @@ const AdminLogs = () => {
                         >
                           {log.playerName}
                           {teamInfo && (
-                            <img 
-                              src={teamInfo.icon} 
-                              alt={log.soldTo} 
+                            <img
+                              src={teamInfo.icon}
+                              alt={log.soldTo}
                               className="w-6 h-6"
                             />
                           )}

@@ -102,8 +102,8 @@ const AdminDashboard = () => {
 
     // If it's an update and team hasn't changed, check balance differently
     const isSameTeam = selectedPlayer.team === selectedTeam;
-    const availableBalance = isSameTeam 
-      ? getTeamBalance(selectedTeam, selectedPlayer.id) + oldPrice 
+    const availableBalance = isSameTeam
+      ? getTeamBalance(selectedTeam, selectedPlayer.id) + oldPrice
       : getTeamBalance(selectedTeam);
 
     // Check if team can afford the price difference
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/players/sell`,
+        `${import.meta.env.VITE_API_URL}/api/players/sell`,
         {
           method: "POST",
           headers: {
@@ -247,16 +247,14 @@ const AdminDashboard = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3
-                        className={`text-lg font-bold ${
-                          player.sold ? "text-white" : "text-gray-800"
-                        }`}
+                        className={`text-lg font-bold ${player.sold ? "text-white" : "text-gray-800"
+                          }`}
                       >
                         {player.name}
                       </h3>
                       <p
-                        className={`capitalize ${
-                          player.sold ? "text-white" : "text-gray-600"
-                        }`}
+                        className={`capitalize ${player.sold ? "text-white" : "text-gray-600"
+                          }`}
                       >
                         {player.position}
                       </p>
@@ -345,7 +343,7 @@ const AdminDashboard = () => {
                         <button
                           key={teamName}
                           className={`${data.color} p-4 rounded-lg text-white
-            ${selectedTeam === teamName ? "ring-4 ring-blue-500 dark:ring-white bg-opacity-100"  : "bg-opacity-80"}
+            ${selectedTeam === teamName ? "ring-4 ring-blue-500 dark:ring-white bg-opacity-100" : "bg-opacity-80"}
             hover:opacity-90 transition-all duration-300`}
                           onClick={() => setSelectedTeam(teamName)}
                         >
