@@ -41,15 +41,11 @@ app.use('/api/logs', transactionLogsRouter);
 app.set('io', io);
 
 // WebSocket connection
-io.on('connection', (socket) => {
-  console.log('Client connected');
-  
-  socket.on('playerSold', (data) => {
-    io.emit('playerUpdated', data);
-  });
+io.on("connection", (socket) => {
+  console.log("Client connected:", socket.id);
 
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
+  socket.on("disconnect", () => {
+    console.log("Client disconnected:", socket.id);
   });
 });
 
