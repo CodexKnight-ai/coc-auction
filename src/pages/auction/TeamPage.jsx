@@ -20,10 +20,10 @@ const TeamPage = () => {
   const team = teamData[teamName.charAt(0).toUpperCase() + teamName.slice(1)];
 
   const clanLeaders = [
-    { name: "Vishv Boda", clan: "Barbarians", codolio_link: "https://codolio.com/profile/vishv0407" },
-    { name: "Meet Rathi", clan: "Giants", codolio_link: "https://codolio.com/profile/meetrathi_97" },
-    { name: "Jay Shah", clan: "Pekkas", codolio_link: "https://codolio.com/profile/jays" },
-    { name: "Dev Kansara", clan: "Wizards", codolio_link: "https://codolio.com/profile/meCAOMLn" },
+    { name: "Vidhan Nahar", clan: "Barbarians", codolio_link: "https://codolio.com/profile/vishv0407" },
+    { name: "Kush Kelaiya", clan: "Giants", codolio_link: "https://codolio.com/profile/meetrathi_97" },
+    { name: "Meet Gandhi", clan: "Pekkas", codolio_link: "https://codolio.com/profile/jays" },
+    { name: "Jyotier Vithlani", clan: "Wizards", codolio_link: "https://codolio.com/profile/jyotier" },
   ].filter(leader => leader.clan === teamName.charAt(0).toUpperCase() + teamName.slice(1));
 
   useEffect(() => {
