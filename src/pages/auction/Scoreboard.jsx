@@ -20,6 +20,11 @@ const getPositionIcon = (position) => {
       return null;
   }
 };
+const getCfProfileUrl = (cfId) => {
+  if (!cfId) return null;
+  if (cfId.startsWith('http')) return cfId;
+  return `https://codeforces.com/profile/${cfId}`;
+};
 
 const Scoreboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -180,20 +185,39 @@ const Scoreboard = () => {
                             {getPositionIcon(player.position)}
                           </div>
                           <div>
-                            <a
-                              href={player.codolio_link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`text-lg md:text-xl font-bold hover:underline ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                                }`}
-                            >
-                              {player.name}
-                            </a>
+                            <div className="flex items-center gap-2">
+                              <a
+                                href={player.codolio_link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`text-lg md:text-xl font-bold hover:underline ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                                  }`}
+                              >
+                                {player.name}
+                              </a>
+
+                              {player.cf_id && (
+                                <a
+                                  href={getCfProfileUrl(player.cf_id)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  title="View Codeforces Profile"
+                                >
+                                  <img
+                                    src="/icons/codeforces.svg"
+                                    alt="Codeforces"
+                                    className="w-5 h-5 hover:scale-110 transition-transform"
+                                  />
+                                </a>
+                              )}
+                            </div>
+
                             <p className={`capitalize mt-1 ${teamInfo ? 'text-white opacity-90' : 'text-gray-600 dark:text-gray-400'
                               }`}>
                               {player.position}
                             </p>
                           </div>
+
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
