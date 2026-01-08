@@ -145,9 +145,9 @@ const RandomBid = () => {
   const isTeamPositionFull = (teamName, position) => {
     const counts = getTeamPositionCounts(teamName);
     const limits = {
-      'co-leader': 4,
-      'elder': 16,
-      'member': 16
+      'co-leader': 3,
+      'elder': 4,
+      'member': 8
     };
     return counts[position.toLowerCase()] >= limits[position.toLowerCase()];
   };

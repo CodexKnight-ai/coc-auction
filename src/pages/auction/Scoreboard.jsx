@@ -76,7 +76,7 @@ const Scoreboard = () => {
             filteredPlayers.map((player) => {
               const teamInfo = player.team ? teamData[player.team] : null;
               let bgColorClass = 'bg-white dark:bg-gray-900';
-              
+
               switch (player.position.toLowerCase()) {
                 case 'co-leader':
                   bgColorClass = 'bg-[#CE8946]/10 dark:bg-emerald-600/40';
@@ -92,65 +92,76 @@ const Scoreboard = () => {
               return (
                 <div
                   key={player.id}
-                  className={`${
-                    teamInfo ? teamInfo.color : bgColorClass
-                  } rounded-xl shadow-lg transform hover:scale-[1.01] transition-all duration-150`}
+                  className={`${teamInfo ? teamInfo.color : bgColorClass
+                    } rounded-xl shadow-lg transform hover:scale-[1.01] transition-all duration-150`}
                 >
                   <div className="p-4">
                     {/* Mobile Layout */}
                     <div className="flex flex-col sm:hidden">
                       <div className='flex gap-4'>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <span className={`text-lg font-bold ${
-                            teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                          }`}>
-                            #{player.id}
-                          </span>
-                          <div className="bg-gray-100 dark:bg-white border-[1px] dark:border-0 rounded-full p-[4px] w-8 h-8 flex items-center justify-center">
-                            {getPositionIcon(player.position)}
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center gap-3">
+                            <span className={`text-lg font-bold ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                              }`}>
+                              #{player.id}
+                            </span>
+                            <div className="bg-gray-100 dark:bg-white border-[1px] dark:border-0 rounded-full p-[4px] w-8 h-8 flex items-center justify-center">
+                              {getPositionIcon(player.position)}
+                            </div>
                           </div>
+                          {teamInfo && (
+                            <img src={teamInfo.icon} alt={player.team} className="w-8 h-8" />
+                          )}
                         </div>
-                        {teamInfo && (
-                          <img src={teamInfo.icon} alt={player.team} className="w-8 h-8" />
-                        )}
-                      </div>
-                      
-                      <div className="mb-4">
-                        <a
-                          href={player.codolio_link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`text-lg font-bold hover:underline ${
-                            teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                          }`}
-                        >
-                          {player.name}
-                        </a>
-                        <p className={`capitalize text-sm ${
-                          teamInfo ? 'text-white opacity-90' : 'text-gray-600 dark:text-gray-400'
-                        }`}>
-                          {player.position}
-                        </p>
-                      </div>
+
+                        <div className="mb-4">
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={player.codolio_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`text-lg md:text-xl font-bold hover:underline ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                                }`}
+                            >
+                              {player.name}
+                            </a>
+
+                            {player.cf_id && (
+                              <a
+                                href={getCfProfileUrl(player.cf_id)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="View Codeforces Profile"
+                              >
+                                <img
+                                  src="/icons/codeforces.svg"
+                                  alt="Codeforces"
+                                  className="w-5 h-5 hover:scale-110 transition-transform"
+                                />
+                              </a>
+                            )}
+                          </div>
+
+                          <p className={`capitalize text-sm ${teamInfo ? 'text-white opacity-90' : 'text-gray-600 dark:text-gray-400'
+                            }`}>
+                            {player.position}
+                          </p>
+                        </div>
                       </div>
 
                       <div className="grid grid-cols-3 gap-2">
-                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${
-                          teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
-                        }`}>
+                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
+                          }`}>
                           <p className="text-xs opacity-80">Final Score</p>
                           <p className="text-lg font-bold">{player.best_score}</p>
                         </div>
-                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${
-                          teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
-                        }`}>
+                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
+                          }`}>
                           <p className="text-xs opacity-80">Q1</p>
                           <p className="text-lg font-bold">{player.q1_score}</p>
                         </div>
-                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${
-                          teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400 '
-                        }`}>
+                        <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400 '
+                          }`}>
                           <p className="text-xs opacity-80">Q2</p>
                           <p className="text-lg font-bold">{player.q2_score}</p>
                         </div>
@@ -160,9 +171,8 @@ const Scoreboard = () => {
                     {/* Desktop Layout */}
                     <div className="hidden sm:flex justify-between items-center">
                       <div className="flex items-center space-x-4">
-                        <span className={`text-xl font-bold ${
-                          teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                        }`}>
+                        <span className={`text-xl font-bold ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                          }`}>
                           #{player.id}
                         </span>
                         <div className="flex items-center gap-4">
@@ -174,36 +184,31 @@ const Scoreboard = () => {
                               href={player.codolio_link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`text-lg md:text-xl font-bold hover:underline ${
-                                teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                              }`}
+                              className={`text-lg md:text-xl font-bold hover:underline ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                                }`}
                             >
                               {player.name}
                             </a>
-                            <p className={`capitalize mt-1 ${
-                              teamInfo ? 'text-white opacity-90' : 'text-gray-600 dark:text-gray-400'
-                            }`}>
+                            <p className={`capitalize mt-1 ${teamInfo ? 'text-white opacity-90' : 'text-gray-600 dark:text-gray-400'
+                              }`}>
                               {player.position}
                             </p>
                           </div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
-                        <div className={`text-center border-r-2 border-gray-700 dark:border-gray-400 pr-4 ${
-                          teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                        }`}>
+                        <div className={`text-center border-r-2 border-gray-700 dark:border-gray-400 pr-4 ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                          }`}>
                           <p className="text-sm opacity-80">Final Score</p>
                           <p className="text-xl font-bold">{player.best_score}</p>
                         </div>
-                        <div className={`text-center ${
-                          teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                        }`}>
+                        <div className={`text-center ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                          }`}>
                           <p className="text-sm opacity-80">Q1 Score</p>
                           <p className="text-xl font-bold">{player.q1_score}</p>
                         </div>
-                        <div className={`text-center ${
-                          teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
-                        }`}>
+                        <div className={`text-center ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
+                          }`}>
                           <p className="text-sm opacity-80">Q2 Score</p>
                           <p className="text-xl font-bold">{player.q2_score}</p>
                         </div>
