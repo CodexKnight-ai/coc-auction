@@ -139,7 +139,7 @@ const Scoreboard = () => {
                                 title="View Codeforces Profile"
                               >
                                 <img
-                                  src="/icons/codeforces.svg"
+                                  src="https://res.cloudinary.com/dvhcrdl4b/image/upload/v1767870754/codeforces_qakwky.svg"
                                   alt="Codeforces"
                                   className="w-5 h-5 hover:scale-110 transition-transform"
                                 />
@@ -204,7 +204,7 @@ const Scoreboard = () => {
                                   title="View Codeforces Profile"
                                 >
                                   <img
-                                    src="/icons/codeforces.svg"
+                                    src="https://res.cloudinary.com/dvhcrdl4b/image/upload/v1767870754/codeforces_qakwky.svg"
                                     alt="Codeforces"
                                     className="w-5 h-5 hover:scale-110 transition-transform"
                                   />
