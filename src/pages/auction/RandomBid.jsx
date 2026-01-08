@@ -393,9 +393,9 @@ const RandomBid = () => {
                     const counts = getTeamPositionCounts(teamName);
                     const isDisabled = isTeamPositionFull(teamName, selectedPlayer.position);
                     const positionLimit = {
-                      'co-leader': 4,
-                      'elder': 16,
-                      'member': 16
+                      'co-leader': 3,
+                      'elder': 4,
+                      'member': 8
                     }[selectedPlayer.position.toLowerCase()];
                     
                     const currentCount = counts[selectedPlayer.position.toLowerCase()];
