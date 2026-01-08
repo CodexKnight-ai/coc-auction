@@ -183,7 +183,7 @@
             "modifiedTime": 0
         },
         {
-            "id": "14",
+            "id": "15",
             "position": "Elder",
             "name": "Saumya Dholakia",
             "best_score": "104",
@@ -419,24 +419,24 @@
         {
             "id": "33",
             "position": "Member",
-            "name": "Shayan Pariyal",
+            "name": "Akshat Patel",
             "best_score": "47",
             "q1_score": "47",
             "q2_score": "NA",
-            "codolio_link": "https://codolio.com/profile/shprl",
+            "codolio_link": "https://codolio.com/profile/akshatptl_19",
             "price": 0,
             "sold": false,
             "team": null,
             "modifiedTime": 0
         },
         {
-            "id": "33",
+            "id": "34",
             "position": "Member",
-            "name": "Akshat Patel",
+            "name": "Shayan Pariyal",
             "best_score": "47",
             "q1_score": "47",
             "q2_score": "NA",
-            "codolio_link": "https://codolio.com/profile/akshatptl_19",
+            "codolio_link": "https://codolio.com/profile/shprl",
             "price": 0,
             "sold": false,
             "team": null,
@@ -729,7 +729,7 @@
             "modifiedTime": 0
         },
         {
-            "id": "56",
+            "id": "57",
             "position": "Member",
             "name": " Nishit Patel ",
             "best_score": "6",
