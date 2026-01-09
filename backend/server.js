@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch((err) => console.error('MongoDB connection error:', err));
 
 app.use(cors({
-  origin: [process.env.BACKEND_URL, process.env.FRONTEND_URL, 'http://localhost:3000','https://coc-auction-2026.vercel.app','https://auction.pclub.online'],
+  origin: [process.env.BACKEND_URL, process.env.FRONTEND_URL, 'http://localhost:3000'],
 }));
 
 app.use(express.json());

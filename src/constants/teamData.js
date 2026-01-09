@@ -8,24 +8,24 @@ export const teamData = {
     color: 'bg-yellow-500',
     border: 'border-yellow-600',
     icon: barbarianIcon,
-    wallet: 25000
+    wallet: 20000
   },
   Giants: {
     color: 'bg-red-500',
     border: 'border-red-600',
     icon: giantIcon,
-    wallet: 25000
+    wallet: 20000
   },
   Pekkas: {
     color: 'bg-purple-500',
     border: 'border-purple-600',
     icon: pekkaIcon,
-    wallet: 25000
+    wallet: 20000
   },
   Wizards: {
     color: 'bg-blue-500',
     border: 'border-blue-600',
     icon: wizardIcon,
-    wallet: 25000
+    wallet: 20000
   }
 }; 

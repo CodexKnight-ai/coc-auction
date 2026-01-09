@@ -5,22 +5,22 @@ const initializeTeams = async () => {
     const teams = [
       { 
         name: 'Barbarians', 
-        wallet: 25000,
+        wallet: 20000,
         color: 'bg-yellow-500'
       },
       { 
         name: 'Giants', 
-        wallet: 25000,
+        wallet: 20000,
         color: 'bg-red-500'
       },
       { 
         name: 'Pekkas', 
-        wallet: 25000,
+        wallet: 20000,
         color: 'bg-purple-500'
       },
       { 
         name: 'Wizards', 
-        wallet: 25000,
+        wallet: 20000,
         color: 'bg-blue-500'
       }
     ];
