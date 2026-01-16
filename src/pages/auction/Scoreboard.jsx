@@ -158,17 +158,17 @@ const Scoreboard = () => {
                         <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
                           }`}>
                           <p className="text-xs opacity-80">Final Score</p>
-                          <p className="text-lg font-bold">{player.best_score}</p>
+                          <p className="text-lg font-bold">{player.best_score.slice(0, 6)}</p>
                         </div>
                         <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400'
                           }`}>
                           <p className="text-xs opacity-80">Q1</p>
-                          <p className="text-lg font-bold">{player.q1_score}</p>
+                          <p className="text-lg font-bold">{player.q1_score.slice(0, 6)}</p>
                         </div>
                         <div className={`text-center p-2 rounded-lg bg-opacity-10 ${teamInfo ? 'text-white bg-white' : 'text-gray-800 dark:text-gray-200 bg-gray-400 '
                           }`}>
                           <p className="text-xs opacity-80">Q2</p>
-                          <p className="text-lg font-bold">{player.q2_score}</p>
+                          <p className="text-lg font-bold">{player.q2_score.slice(0, 6)}</p>
                         </div>
                       </div>
                     </div>
@@ -224,17 +224,17 @@ const Scoreboard = () => {
                         <div className={`text-center border-r-2 border-gray-700 dark:border-gray-400 pr-4 ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
                           }`}>
                           <p className="text-sm opacity-80">Final Score</p>
-                          <p className="text-xl font-bold">{player.best_score}</p>
+                          <p className="text-xl font-bold">{player.best_score.slice(0, 6)}</p>
                         </div>
                         <div className={`text-center ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
                           }`}>
                           <p className="text-sm opacity-80">Q1 Score</p>
-                          <p className="text-xl font-bold">{player.q1_score}</p>
+                          <p className="text-xl font-bold">{player.q1_score.slice(0, 6)}</p>
                         </div>
                         <div className={`text-center ${teamInfo ? 'text-white' : 'text-gray-800 dark:text-gray-200'
                           }`}>
                           <p className="text-sm opacity-80">Q2 Score</p>
-                          <p className="text-xl font-bold">{player.q2_score}</p>
+                          <p className="text-xl font-bold">{player.q2_score.slice(0, 6)}</p>
                         </div>
                       </div>
                     </div>
