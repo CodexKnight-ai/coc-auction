@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [process.env.FRONTEND_URL, 'http://localhost:3000','https://coc-auction-2026.vercel.app'],
+    origin: [process.env.FRONTEND_URL, 'http://localhost:3000','https://coc-auction-2026.vercel.app','https://lb.pclub.online'],
     methods: ['GET', 'POST'],
     credentials: true,
     transports: ['websocket', 'polling']
